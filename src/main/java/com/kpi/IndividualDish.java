@@ -47,6 +47,14 @@ public class IndividualDish extends Item {
         this.weight -= this.weight / 5; // weight - 5%
     }
 
+    public Integer calcPrice() {
+        Integer resPrice = 0;
+        for (Ingredient ingredient : ingredients)
+            resPrice += ingredient.getPrice();
+
+        return resPrice;
+    }
+
     /**
      * Returns the vector of {@link Ingredient}s of which consists the dish.
      * @return the vector of {@link Ingredient}s of which consists the dish.
